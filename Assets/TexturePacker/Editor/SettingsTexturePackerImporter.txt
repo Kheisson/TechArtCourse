@@ -1,0 +1,8 @@
+version: 2
+tpsheetFileNames:
+- Assets/Art/Sprites/KenneyUI/KenneyPRGUI.tpsheet
+textureFileNames:
+- Assets/Art/Sprites/KenneyUI/KenneyPRGUI.png
+normalmapFileNames:
+- 
+enableDebugOutput: 0
