@@ -1,22 +1,23 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace UI.Effects
+namespace UI.Effects.Buttons
 {
     [CreateAssetMenu(fileName = "ButtonEffectSettings", menuName = "_Custom Items/Effects/Button Effect Settings")]
     public class ButtonSettingsEffect : EffectSettings
     {
         #region --- Inspector Variables ---
 
-        [SerializeField] private float _hoverScale = 1.2f;
-        [SerializeField] private float _hoverDuration = 0.1f;
+        [SerializeField] private float hoverScale = 1.2f;
+        [SerializeField] private float hoverDuration = 0.1f;
 
         #endregion
 
         
         #region --- Properties ---
 
-        public float HoverScale => _hoverScale;
-        public float HoverDuration => _hoverDuration;
+        public float HoverScale => hoverScale;
+        public float HoverDuration => hoverDuration;
 
         #endregion
 

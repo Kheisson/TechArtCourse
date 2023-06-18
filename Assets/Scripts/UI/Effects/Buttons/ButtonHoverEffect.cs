@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace UI.Effects
+namespace UI.Effects.Buttons
 {
     public class ButtonHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         #region --- Private Variables ---
 
-        private Button _button;
+        protected Button Button;
         private Vector3 _defaultScale;
 
         #endregion
@@ -26,7 +26,7 @@ namespace UI.Effects
 
         private void Awake()
         {
-            _button = GetComponent<Button>();
+            Button = GetComponent<Button>();
             _defaultScale = transform.localScale;
         }
 
@@ -35,17 +35,17 @@ namespace UI.Effects
         
         #region --- Interface Methods ---
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
-            if (_button.interactable)
+            if (Button.interactable)
             {
                 LeanTween.scale(gameObject, _defaultScale * hoverScale, hoverDuration);
             }
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
-            if (_button.interactable)
+            if (Button.interactable)
             {
                 LeanTween.scale(gameObject, _defaultScale, hoverDuration);
             }
